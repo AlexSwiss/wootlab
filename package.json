@@ -1,0 +1,45 @@
+{
+  "name": "wootlab",
+  "version": "1.0.0",
+  "description": "A car hailing app with real time location on map",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server",
+    "dev": "cross-env NODE_ENV=development nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSwiss/wootlab.git"
+  },
+  "author": "alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexSwiss/wootlab/issues"
+  },
+  "homepage": "https://github.com/AlexSwiss/wootlab#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "crypto-random-string": "^3.2.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^9.0.2",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.11.1",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.9",
+    "morgan": "^1.10.0",
+    "validator": "^13.6.0",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
