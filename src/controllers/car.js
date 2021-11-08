@@ -36,7 +36,7 @@ exports.add = asyncHandler(async (req, res) => {
 });
 
 // @route GET api/car/all
-// @desc Retrieve all livestocks from the database.
+// @desc Retrieve all cars from the database.
 // @access Public
 exports.getAllCars = async (req, res) => {
   try {
@@ -48,8 +48,8 @@ exports.getAllCars = async (req, res) => {
   }
 };
 
-// @route GET api/livestock/:id
-// @desc Find a single livestock with an id
+// @route GET api/car/:id
+// @desc Find a single car with an id
 // @access Public
 exports.findOne = asyncHandler(async (req, res) => {
   const id = req.params.id;
@@ -63,7 +63,7 @@ exports.findOne = asyncHandler(async (req, res) => {
 });
 
 // @route DELETE api/car/:id
-// @desc Delete a Livestock with the specified id in the request
+// @desc Delete a Car with the specified id in the request
 // @access Public
 exports.delete = asyncHandler(async (req, res) => {
   const id = req.params.id;
@@ -75,4 +75,23 @@ exports.delete = asyncHandler(async (req, res) => {
   }
 
   SuccessResponse(res, 200, "Car removed successfully");
+});
+
+// @route POST api/user/update
+// @desc Update Profile
+// @access Public
+exports.updateCar = asyncHandler(async (req, res) => {
+  const update = req.body;
+  const id = req.params.id;
+
+  const car = await Car.findByIdAndUpdate(
+    id,
+    { $set: update },
+    { new: true }
+  );
+  
+ if (car) {
+    return SuccessResponse(res, 200, "Car has been updated", car);
+  }
+
 });

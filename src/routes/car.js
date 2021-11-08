@@ -15,9 +15,12 @@ router.get('/', (req, res) => {
  
  router.get('/all', checkUser, Car.getAllCars);
 
-// router.get('/update/:id', checkUser, Livestock.findOne);
+ router.get('/single/:id', checkUser, Car.findOne);
 
-// router.delete('/delete/:id', checkUser, Livestock.delete);
+ router.delete('/delete/:id', checkUser, Car.delete);
+
+ router.patch('/update/:id', checkUser, Car.updateCar);
+
 
 
 module.exports = router;
