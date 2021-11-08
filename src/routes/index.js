@@ -1,4 +1,5 @@
 const auth = require('./auth');
+const car = require('./car');
 
 module.exports = app => {
   app.get('/', (req, res) => {
@@ -6,5 +7,6 @@ module.exports = app => {
   }); 
 
   app.use('/api/auth', auth);
+  app.use('/api/car', car);
 
 };
