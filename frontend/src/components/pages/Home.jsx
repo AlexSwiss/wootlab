@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import UserContext from '../../context/userContext';
 import axios from "axios";
 import userContext from '../../context/userContext';
+import Cars from './Cars'
 
 
 function Home () {
@@ -53,7 +54,7 @@ function Home () {
                     <Link to="/login">Login</Link>
                 </>
             )}
-
+            <Cars />
             
         </div>
     );

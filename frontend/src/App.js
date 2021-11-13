@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Header from './components/layout/Header';
 import Home from './components/pages/Home';
+import SingleCar from './components/pages/SingleCar';
+
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import UserContext from './context/userContext';
@@ -44,6 +46,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/car/:id" component={SingleCar} />
+
         </Switch>
         </UserContext.Provider>
     </BrowserRouter>
