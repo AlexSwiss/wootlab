@@ -11,7 +11,7 @@ function Home () {
     const [APIData, setAPIData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/car/all`)
+        axios.get(`http://localhost:8000/api/auth/users`)
             .then((response) => {
                 setAPIData(response.data.data);
             })
@@ -23,12 +23,9 @@ function Home () {
              <thead>
                 <tr>
                 <th>#</th>
-                <th>Model</th>
-                <th>Plate Number</th>
-                <th>Car ID</th>
-                <th>Maximum KM</th>
-                <th>Maximum Load</th>
-                <th>Fuel Type</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>User ID</th>
                 </tr>
             </thead>
 
@@ -39,16 +36,12 @@ function Home () {
                         <tr>
                         <td>1</td>
                         <td>
-                        <Link to={`/car/${data._id}`}>
-                            { data.car_model }
+                        <Link to={`/user/one/${data._id}`}>
+                            { data.name }
                          </Link>
                         </td> 
-                        <td>{data.license_plate}</td>
+                        <td>{data.email}</td>
                         <td>{data._id}</td>
-                        <td>{data.car_year}</td>
-                        <td>{data.current_km}</td>
-                        <td>{data.max_load_km}</td>
-                        <td>{data.fuel_type}</td>
                       </tr>
                        )})}
 

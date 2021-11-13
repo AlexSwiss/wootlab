@@ -7,7 +7,7 @@ import Cars from './Cars'
 import Users from './Users'
 
 
-function Home () {
+function Dashboard () {
     const {userData} = useContext(UserContext);
     const history = useHistory();
     const [longitude, setLongitude] = useState();
@@ -55,8 +55,12 @@ function Home () {
                     <Link to="/login">Login</Link>
                 </>
             )}
+            <h3>List of Cars</h3>
+            <Cars />
+            <h3>Choose a User to Track</h3>
+            <Users />
         </div>
     );
 }
  
-export default Home;
+export default Dashboard;
