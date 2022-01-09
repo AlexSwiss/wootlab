@@ -104,7 +104,7 @@ dist
 .tern-port
 
 # Env file
-config/config.env
+
 
 # File Storage
 uploads
