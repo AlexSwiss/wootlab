@@ -32,7 +32,7 @@ exports.add = asyncHandler(async (req, res) => {
   // create car details
   const car_ = await Car.create(newCar);
 
-  SuccessResponse(res, 200, "Car added successfully", car_);
+  SuccessResponse(res, 200, "Car has added successfully", car_);
 });
 
 // @route GET api/car/all
